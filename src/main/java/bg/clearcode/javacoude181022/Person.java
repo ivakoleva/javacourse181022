@@ -1,5 +1,8 @@
 package bg.clearcode.javacoude181022;
 
+import java.util.Optional;
+import java.util.function.Predicate;
+
 /**
  * Created by Iva Koleva, ClearCode Ltd. on 22.10.2018,
  * a significant bit of leva.bg project.
@@ -62,6 +65,11 @@ public class Person extends BaseEntity implements Nameable, StateEntity {
     @Override
     public Long getId() {
         return super.getId() + 1;
+    }
+
+    public Optional<Person> findPersonFirst(final Predicate<Person> personPredicate) {
+        // TODO: implement
+        return Optional.empty();
     }
 
     private Long getIdSuper() {
