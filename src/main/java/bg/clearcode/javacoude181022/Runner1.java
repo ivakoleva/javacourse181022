@@ -117,22 +117,22 @@ public class Runner1 {
         final Person[] personsArray = {new Person(), new Person()};
         Arrays.sort(personsArray);*/
 
-        //final String test = "asd" + "1";
+        //final String testUpperBoundary = "asd" + "1";
         /*final Person person = new Person();
         person.setName("test0");*/
-        //final StringBuilder stringBuilder = new StringBuilder("test");
+        //final StringBuilder stringBuilder = new StringBuilder("testUpperBoundary");
         //stringBuilder.append(1).append(n).
 
-        /*test(person);
+        /*testUpperBoundary(person);
         System.out.println(person.getName());*/
 
-        /*final String test = "test".concat("asd");
-        char[] charsArray = test.toCharArray();
+        /*final String testUpperBoundary = "testUpperBoundary".concat("asd");
+        char[] charsArray = testUpperBoundary.toCharArray();
 
-        "test" + "asd"
+        "testUpperBoundary" + "asd"
 
 
-        final StringBuilder stringBuilder = new StringBuilder(test);
+        final StringBuilder stringBuilder = new StringBuilder(testUpperBoundary);
         testString(stringBuilder);
         System.out.println(stringBuilder);*/
 
@@ -146,7 +146,7 @@ public class Runner1 {
 
     }
 
-    /*public static void test(final Person person) {
+    /*public static void testUpperBoundary(final Person person) {
         //person = new Person();
         person.setName("test1");
     }*/

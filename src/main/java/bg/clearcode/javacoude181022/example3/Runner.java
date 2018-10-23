@@ -2,6 +2,7 @@ package bg.clearcode.javacoude181022.example3;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
@@ -40,6 +41,13 @@ public class Runner {
 
         //final ArrayList<Object> list = new ArrayList<String>();
         //Object o = "asd";
+
+
+        //testUpperBoundary(Collection.class);
+        testUpperBoundary(ArrayList.class);
+
+        testLowerBoundary(Collection.class);
+        //testLowerBoundary(ArrayList.class);
     }
 
     public static List<Integer> modifyList(final List<Integer> integerList) {
@@ -54,5 +62,13 @@ public class Runner {
 
     private <T> void testGenericType(final List<T> list) {
         list.set(0, list.get(0));
+    }
+
+    public static void testUpperBoundary(final Class<? extends List> clazz) {
+        // TODO: implement
+    }
+
+    public static void testLowerBoundary(final Class<? super List > clazz) {
+        // TODO: implement
     }
 }

@@ -53,7 +53,7 @@ public class Runner extends Runner1 {
 *//*
 
      *//*System.out.println(testClass.field);
-        testClass.test("asd");
+        testClass.testUpperBoundary("asd");
 
         int[] chars = {0, 1};
         System.out.println(chars.toString());*//*
@@ -71,7 +71,7 @@ public class Runner extends Runner1 {
 
         System.out.println(charsClassic);
 
-        String test = null;
+        String testUpperBoundary = null;
 
         char[] chars = {'a', 'b'};*//*
 
@@ -114,8 +114,8 @@ public class Runner extends Runner1 {
     }
 
     @Override
-    void test(String value) {
-        super.test(value);
+    void testUpperBoundary(String value) {
+        super.testUpperBoundary(value);
     }
 
     static void testStatic() {

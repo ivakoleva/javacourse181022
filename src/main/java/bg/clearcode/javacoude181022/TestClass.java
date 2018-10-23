@@ -49,7 +49,7 @@ class TestClass {
     }
 
     void test(final String value) {
-        System.out.println("test: " + value + field);
+        System.out.println("testUpperBoundary: " + value + field);
     }
 
     static void testStatic(final String value) {
