@@ -4,10 +4,10 @@ package bg.clearcode.javacoude181022;
  * Created by Iva Koleva, ClearCode Ltd. on 22.10.2018,
  * a significant bit of leva.bg project.
  */
-public class Person extends BaseEntity implements Nameable {
+public class Person extends BaseEntity implements Nameable, StateEntity {
     private static int testStaticInt = 1;
     private String name;
-
+    private String egn;
 
     @Override
     public String getName() {
@@ -17,6 +17,14 @@ public class Person extends BaseEntity implements Nameable {
     @Override
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getEgn() {
+        return egn;
+    }
+
+    public void setEgn(String egn) {
+        this.egn = egn;
     }
 
     @Override

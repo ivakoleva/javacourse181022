@@ -8,6 +8,7 @@ public abstract class BaseEntity {
     protected Long id;
 
     public Long getId() {
+        Runner2 runner2 = new Runner2();
         return id;
     }
 

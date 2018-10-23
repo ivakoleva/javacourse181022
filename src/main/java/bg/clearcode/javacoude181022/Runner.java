@@ -52,15 +52,15 @@ public class Runner extends Runner1 {
         System.out.println(TestClass.classVariable);
 *//*
 
-        *//*System.out.println(testClass.field);
+     *//*System.out.println(testClass.field);
         testClass.test("asd");
 
         int[] chars = {0, 1};
         System.out.println(chars.toString());*//*
 
 
-        *//*char[] charsClassic = new char[2];
-        *//**//*for(int i = 0; i < charsClassic.length; i++) {
+     *//*char[] charsClassic = new char[2];
+     *//**//*for(int i = 0; i < charsClassic.length; i++) {
             System.out.println(charsClassic[i]);
             System.out.println(charsClassic[i] == '\u0000');
         }*//**//*
@@ -77,7 +77,7 @@ public class Runner extends Runner1 {
 
 
 
-        *//*System.out.println(value);*//*
+     *//*System.out.println(value);*//*
         // 00000001 >> 10000000
         // 00000010 >> 00000001
 
@@ -96,7 +96,7 @@ public class Runner extends Runner1 {
             System.out.println(false);
         }*//*
 
-        *//*int value = 1;
+     *//*int value = 1;
         int value1 = 0;
         System.out.println(value1 += value += 1);
 
@@ -108,7 +108,7 @@ public class Runner extends Runner1 {
         valueString = valueString + "a";
         String valueStringAsd = "asd";
 *//*
-        *//*System.out.println((int) 'a');
+     *//*System.out.println((int) 'a');
 
         System.out.println(false);*//*
     }
@@ -132,4 +132,7 @@ public class Runner extends Runner1 {
             }
         }
     }*/
+}
+
+class Runner2 {
 }
