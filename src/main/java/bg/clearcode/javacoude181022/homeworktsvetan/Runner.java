@@ -33,11 +33,11 @@ public class Runner {
             // implement a supplier of stateEntity & initialize a collection
         }).limit(10);*/
 
-        final Organization clearCode = new Organization("ClearCode", "Ltd.");
-        final Organization newHorizons = new Organization("New Horizons", "Ltd.");
+        final Organization clearCode = new Organization("ClearCode", "Ltd.", "11.09.1990");
+        final Organization newHorizons = new Organization("New Horizons", "Ltd.", "11.09.1980");
 
-        final Person ivan = new Person("Ivan", "Ivanov");
-        final Person maria = new Person("Maria", "Georgieva");
+        final Person ivan = new Person("Ivan", "Ivanov", "01.02.1980");
+        final Person maria = new Person("Maria", "Georgieva", "21.07.1994");
 
         final List<StateEntity> stateEntities = new ArrayList<>();
         stateEntities.add(clearCode);
@@ -45,6 +45,7 @@ public class Runner {
         stateEntities.add(ivan);
         stateEntities.add(maria);
 
+        System.out.println(maria.getAge());
     }
 
     public static <T extends StateEntity> T generateStateEntity(final Class<T> stateEntityClass) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {

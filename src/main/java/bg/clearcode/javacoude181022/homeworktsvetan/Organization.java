@@ -1,5 +1,7 @@
 package bg.clearcode.javacoude181022.homeworktsvetan;
 
+import java.time.LocalDate;
+
 public class Organization extends StateEntityImpl {
     private String eik;
     private String organizationName;
@@ -8,9 +10,10 @@ public class Organization extends StateEntityImpl {
     public Organization() {
     }
 
-    public Organization(String organizationName, String organizationType) {
+    Organization(String organizationName, String organizationType, String creationDate) {
         this.organizationName = organizationName;
         this.organizationType = organizationType;
+        super.setIssueDate(creationDate);
     }
 
     public String getOrganizationName() {
