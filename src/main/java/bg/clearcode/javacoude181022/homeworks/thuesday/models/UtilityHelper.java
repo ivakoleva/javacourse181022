@@ -7,14 +7,6 @@ public final class UtilityHelper implements Comparator<StateEntity> {
     @Override
     public int compare(StateEntity o1, StateEntity o2) {
 
-        if (o1.age > o2.age) {
-            return 1;
-        }
-
-        if (o1.age < o2.age) {
-            return -1;
-        }
-
-        return 0;
+        return Integer.compare(o1.age, o2.age);
     }
 }
