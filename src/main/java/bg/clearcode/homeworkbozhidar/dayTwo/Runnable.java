@@ -43,8 +43,8 @@ public class Runnable {
 
 
     public static <T extends Ageable> T generateAgeableInstance(final Class<T> ageableClass) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
-        final T ageable = ageableClass.getDeclaredConstructor().newInstance();
-        ageable.setAge((int) (Math.random() * 100));
-        return ageable;
+        final T ageableObject = ageableClass.getDeclaredConstructor().newInstance();
+        ageableObject.setAge((int) (Math.random() * 100));
+        return ageableObject;
     }
 }
