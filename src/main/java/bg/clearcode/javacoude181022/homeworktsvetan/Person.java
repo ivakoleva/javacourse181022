@@ -1,10 +1,13 @@
 package bg.clearcode.javacoude181022.homeworktsvetan;
 
-public class Person extends PersonOrg implements StateEntity {
+public class Person extends StateEntityImpl {
     private String egn;
     private int age;
     private String firstName;
     private String lastName;
+
+    public Person() {
+    }
 
     public Person(String firstName, String lastName) {
         this.firstName = firstName;
@@ -50,6 +53,6 @@ public class Person extends PersonOrg implements StateEntity {
 
     @Override
     public String getName() {
-        return this.firstName + " " + this.lastName;
+        return firstName + " " + lastName;
     }
 }

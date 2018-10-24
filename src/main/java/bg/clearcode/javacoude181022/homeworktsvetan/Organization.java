@@ -1,9 +1,12 @@
 package bg.clearcode.javacoude181022.homeworktsvetan;
 
-public class Organization extends PersonOrg implements StateEntity {
+public class Organization extends StateEntityImpl {
     private String eik;
     private String organizationName;
     private String organizationType;
+
+    public Organization() {
+    }
 
     public Organization(String organizationName, String organizationType) {
         this.organizationName = organizationName;

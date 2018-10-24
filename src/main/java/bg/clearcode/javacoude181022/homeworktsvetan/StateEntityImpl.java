@@ -1,16 +1,13 @@
 package bg.clearcode.javacoude181022.homeworktsvetan;
 
-public abstract class PersonOrg implements Comparable<PersonOrg>{
-
-    public abstract String getName();
-
+public abstract class StateEntityImpl implements StateEntity, Comparable<StateEntity> {
     @Override
     public String toString() {
         return getName();
     }
 
     @Override
-    public int compareTo(PersonOrg entity) {
+    public int compareTo(final StateEntity entity) {
         return this.getName().compareTo(entity.getName());
     }
 }
