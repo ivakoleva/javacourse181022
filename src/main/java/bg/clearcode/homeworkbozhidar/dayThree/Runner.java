@@ -2,40 +2,68 @@ package bg.clearcode.homeworkbozhidar.dayThree;
 
 import java.lang.reflect.InvocationTargetException;
 import java.time.LocalDateTime;
-import java.util.Stack;
+import java.util.concurrent.SynchronousQueue;
+import java.util.concurrent.TimeUnit;
 
 public class Runner {
     public static void main(String[] args) throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
-
-        final Organization clearCode = new Organization("ClearCode", "Ltd.", LocalDateTime.now());
-        final Organization newHorizons = new Organization("New Horizons", "Ltd.", LocalDateTime.now());
-        final Stack<Organization> stack = new Stack<>();
+        final SynchronousQueue<Organization> synchronousQueue = new SynchronousQueue<>();
 
         final Thread threadPush = new Thread(() -> {
-            System.out.println("I am here to push");
-            stack.push(clearCode);
-            stack.push(newHorizons);
-            System.out.println("Stack size before remove : " + stack.size());
+            final Organization clearCode = new Organization("ClearCode", "Ltd.", LocalDateTime.now());
+            final Organization newHorizons = new Organization("New Horizons", "Ltd.", LocalDateTime.now());
+            threadPrint("I am here to push");
+
+            while (!synchronousQueue.offer(clearCode)) {
+            }
+            threadPrint("clearcode added");
+
+            threadPrint("adding new horizons");
+            while (!synchronousQueue.offer(newHorizons)) {
+            }
+            threadPrint("new horizons added");
+
+            threadPrint("Stack size before remove : " + synchronousQueue.size());
         });
 
         final Thread threadRemove = new Thread(() -> {
-            System.out.println("I am here to remove");
-            while (stack.size() > 0) {
-                stack.pop();
-            }
-            System.out.println("Stack size after remove : " + stack.size());
-        });
-
-        try {
-            threadPush.start();
-            threadRemove.start();
-        } finally {
             try {
-                threadPush.join();
-                threadRemove.join();
+                threadPrint("I am here to remove");
+                Organization organization;
+                int i = 0;
+
+                do {
+                    threadPrint("polling " + i++);
+                    organization = synchronousQueue.poll(1, TimeUnit.MINUTES);
+                    if (organization == null) {
+                        try {
+                            Thread.sleep(1000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    } else {
+                        threadPrint("polled: " + organization);
+                    }
+                } while (organization == null);
+                threadPrint("Stack size after remove : " + synchronousQueue.size());
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+        });
+
+        threadPush.start();
+        threadRemove.start();
+
+        try {
+            threadPush.join();
+            threadRemove.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
+        System.out.println();
+    }
+
+    public static void threadPrint(final String value) {
+        System.out.println(Thread.currentThread().getName() + ": " + value);
     }
 }
