@@ -20,3 +20,11 @@ task myRun(type: JavaExec) {
     main = "bg.clearcode.javacoude181022.example4.Runner"
     //args "arg1", "arg2"
 }
+
+jar {
+    manifest {
+        attributes(
+        'Main-Class' : 'bg.clearcode.javacoude181022.example11.Runner'
+        )
+    }
+}
