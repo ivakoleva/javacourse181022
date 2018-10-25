@@ -1,5 +1,15 @@
 <b>2018-10-24</b>
 
+* create parent-child directories using Files (dir/subdir)
+* write content to dir/file1, dir/subdir/file2
+* Files.walk (recursively)
+    * if file - print content to standard output
+    * if directory, print name and continue traversal
+* delete one file
+* create temporary file
+
+<b>2018-10-24</b>
+
 * age field deprecated
 * introducing dateOfCreation
 * getAge() reimplemented, using dynamic dateOfCreation-based calculation
